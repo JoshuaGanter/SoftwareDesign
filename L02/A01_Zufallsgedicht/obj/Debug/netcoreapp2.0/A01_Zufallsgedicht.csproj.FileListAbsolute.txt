@@ -1,0 +1,10 @@
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\bin\Debug\netcoreapp2.0\A01_Zufallsgedicht.deps.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\bin\Debug\netcoreapp2.0\A01_Zufallsgedicht.runtimeconfig.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\bin\Debug\netcoreapp2.0\A01_Zufallsgedicht.runtimeconfig.dev.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\bin\Debug\netcoreapp2.0\A01_Zufallsgedicht.dll
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\bin\Debug\netcoreapp2.0\A01_Zufallsgedicht.pdb
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\obj\Debug\netcoreapp2.0\A01_Zufallsgedicht.csproj.CoreCompileInputs.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\obj\Debug\netcoreapp2.0\A01_Zufallsgedicht.AssemblyInfoInputs.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\obj\Debug\netcoreapp2.0\A01_Zufallsgedicht.AssemblyInfo.cs
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\obj\Debug\netcoreapp2.0\A01_Zufallsgedicht.dll
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Zufallsgedicht\obj\Debug\netcoreapp2.0\A01_Zufallsgedicht.pdb
