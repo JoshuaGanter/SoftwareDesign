@@ -7,37 +7,34 @@ namespace A01_Koerpereigenschaften
     {
         static void Main(string[] args)
         {
-            if(args.Length == 2)
+            // Check if enough arguments are provided.
+            if (args.Length == 2)
             {
                 string koerper = args[0];
-                if(koerper == "w" || koerper == "k" || koerper == "o")
-                {
-                    try
-                    {
-                        double d = double.Parse(args[1]);
+                double size;
 
-                        switch(koerper)
-                        {
-                            case "w":
-                                Console.WriteLine(GetCubeInfo(d));
-                                break;
-                            case "k":
-                                Console.WriteLine(GetSphereInfo(d));
-                                break;
-                            case "o":
-                                Console.WriteLine(GetOctahedronInfo(d));
-                                break;
-                        }
-                    }
-                    catch(FormatException e)
+                // Check if the size is a parseable double, if so, store it in the variable size.
+                if (double.TryParse(args[1], out size))
+                {
+                    switch (koerper)
                     {
-                        Console.WriteLine("Keine gültige Kantenlänge/kein gültiger Durchmesser.");
-                        Console.WriteLine(e.Message);
+                        case "w":
+                            Console.WriteLine(GetCubeInfo(size));
+                            break;
+                        case "k":
+                            Console.WriteLine(GetSphereInfo(size));
+                            break;
+                        case "o":
+                            Console.WriteLine(GetOctahedronInfo(size));
+                            break;
+                        default:
+                            Console.WriteLine("Kein gültiger Körper.");
+                            break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Kein gültiger Körper.");
+                    Console.WriteLine("Keine gültige Kantenlänge/kein gültiger Durchmesser.");
                 }
             }
             else
