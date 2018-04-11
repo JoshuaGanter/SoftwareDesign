@@ -10,7 +10,7 @@ if (person.LastName != "Cambridge")
 ```
 geändert werden. Dann würde "Willi"s Mutter, "Diana" zurückgegeben, da die Bedingung für "Willi" nicht wahr ist und im Stammbaum eine Generation nach oben gesprungen wird. Da der Stammbaum zuerst auf mütterlicher Seite geprüft wird, wird "Diana" zurückgegeben, da die Bedingung auf sie zutrifft.
 
-Man kann auch expilizit nach einem bestimmten Namen suchen, beispielsweise mit:
+Man kann auch explizit nach einem bestimmten Namen suchen, beispielsweise mit:
 ```
 if (person.LastName == "York")
 ```
