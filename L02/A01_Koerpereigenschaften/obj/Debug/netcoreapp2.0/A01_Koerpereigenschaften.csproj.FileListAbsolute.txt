@@ -8,3 +8,4 @@ C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Koerpereigenschaften\obj\
 C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Koerpereigenschaften\obj\Debug\netcoreapp2.0\A01_Koerpereigenschaften.AssemblyInfo.cs
 C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Koerpereigenschaften\obj\Debug\netcoreapp2.0\A01_Koerpereigenschaften.dll
 C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Koerpereigenschaften\obj\Debug\netcoreapp2.0\A01_Koerpereigenschaften.pdb
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L02\A01_Koerpereigenschaften\obj\Debug\netcoreapp2.0\A01_Koerpereigenschaften.csprojResolveAssemblyReference.cache

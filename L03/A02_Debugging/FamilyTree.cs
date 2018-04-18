@@ -26,12 +26,22 @@ namespace Debugging
             Person ret = null;
             var age = DateTime.Now.Year - person.DateOfBirth.Year;
             if (age >= 70 && age <= 120)
+            {
                 return person;
+            }
 
-            ret = Find(person.Mom);
-            if (ret != null)
-                return ret;
-            ret = Find(person.Dad);
+            if( person.Mom != null)
+            {
+                ret = Find(person.Mom);
+                if (ret != null)
+                {
+                    return ret;
+                }
+            }
+            if (person.Dad != null)
+            {
+                ret = Find(person.Dad);
+            }
             return ret;
         }
 

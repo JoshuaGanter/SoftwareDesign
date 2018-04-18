@@ -9,13 +9,13 @@ namespace A01_Koerpereigenschaften
             // Check if enough arguments are provided.
             if (args.Length == 2)
             {
-                string koerper = args[0];
+                string geometricShape = args[0];
                 double size;
 
                 // Check if the size is a parseable double, if so, store it in the variable size.
                 if (double.TryParse(args[1], out size))
                 {
-                    switch (koerper)
+                    switch (geometricShape)
                     {
                         case "w":
                             Console.WriteLine(GetCubeInfo(size));
@@ -42,43 +42,43 @@ namespace A01_Koerpereigenschaften
             }
         }
 
-        static double GetCubeSurface(double d)
+        static double GetCubeSurface(double edgeLength)
         {
-            return 6 * Math.Pow(d, 2);
+            return 6 * Math.Pow(edgeLength, 2);
         }
-        static double GetCubeVolume(double d)
+        static double GetCubeVolume(double edgeLength)
         {
-            return Math.Pow(d, 3);
+            return Math.Pow(edgeLength, 3);
         }
-        static string GetCubeInfo(double d)
+        static string GetCubeInfo(double edgeLength)
         {
-            return "Kubus: A=" + Math.Round(GetCubeSurface(d), 2) + " | V=" + Math.Round(GetCubeVolume(d), 2);
-        }
-
-        static double GetSphereSurface(double d)
-        {
-            return Math.PI * Math.Pow(d, 2);
-        }
-        static double GetSphereVolume(double d)
-        {
-            return Math.PI * Math.Pow(d, 3) / 6;
-        }
-        static string GetSphereInfo(double d)
-        {
-            return "Kugel: A=" + Math.Round(GetSphereSurface(d), 2) + " | V=" + Math.Round(GetSphereVolume(d), 2);
+            return "Würfel: A=" + Math.Round(GetCubeSurface(edgeLength), 2) + " | V=" + Math.Round(GetCubeVolume(edgeLength), 2);
         }
 
-        static double GetOctahedronSurface(double d)
+        static double GetSphereSurface(double diameter)
         {
-            return 2 * Math.Sqrt(3) * Math.Pow(d, 2);
+            return Math.PI * Math.Pow(diameter, 2);
         }
-        static double GetOctahedronVolume(double d)
+        static double GetSphereVolume(double diameter)
         {
-            return Math.Sqrt(2) * Math.Pow(d, 3) / 3;
+            return Math.PI * Math.Pow(diameter, 3) / 6;
         }
-        static string GetOctahedronInfo(double d)
+        static string GetSphereInfo(double diameter)
         {
-            return "Oktaeder: A=" + Math.Round(GetOctahedronSurface(d), 2) + " | V=" + Math.Round(GetOctahedronVolume(d), 2);
+            return "Kugel: A=" + Math.Round(GetSphereSurface(diameter), 2) + " | V=" + Math.Round(GetSphereVolume(diameter), 2);
+        }
+
+        static double GetOctahedronSurface(double edgeLength)
+        {
+            return 2 * Math.Sqrt(3) * Math.Pow(edgeLength, 2);
+        }
+        static double GetOctahedronVolume(double edgeLength)
+        {
+            return Math.Sqrt(2) * Math.Pow(edgeLength, 3) / 3;
+        }
+        static string GetOctahedronInfo(double edgeLength)
+        {
+            return "Oktaeder: A=" + Math.Round(GetOctahedronSurface(edgeLength), 2) + " | V=" + Math.Round(GetOctahedronVolume(edgeLength), 2);
         }
     }
 }
