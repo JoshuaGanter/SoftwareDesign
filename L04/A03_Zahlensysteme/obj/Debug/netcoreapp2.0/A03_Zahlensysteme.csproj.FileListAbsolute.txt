@@ -1,0 +1,11 @@
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\bin\Debug\netcoreapp2.0\A03_Zahlensysteme.deps.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\bin\Debug\netcoreapp2.0\A03_Zahlensysteme.runtimeconfig.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\bin\Debug\netcoreapp2.0\A03_Zahlensysteme.runtimeconfig.dev.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\bin\Debug\netcoreapp2.0\A03_Zahlensysteme.dll
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\bin\Debug\netcoreapp2.0\A03_Zahlensysteme.pdb
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\obj\Debug\netcoreapp2.0\A03_Zahlensysteme.csprojResolveAssemblyReference.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\obj\Debug\netcoreapp2.0\A03_Zahlensysteme.csproj.CoreCompileInputs.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\obj\Debug\netcoreapp2.0\A03_Zahlensysteme.AssemblyInfoInputs.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\obj\Debug\netcoreapp2.0\A03_Zahlensysteme.AssemblyInfo.cs
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\obj\Debug\netcoreapp2.0\A03_Zahlensysteme.dll
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L04\A03_Zahlensysteme\obj\Debug\netcoreapp2.0\A03_Zahlensysteme.pdb
