@@ -1,0 +1,11 @@
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\bin\Debug\netcoreapp2.0\A04_GenerischerBaum.deps.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\bin\Debug\netcoreapp2.0\A04_GenerischerBaum.runtimeconfig.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\bin\Debug\netcoreapp2.0\A04_GenerischerBaum.runtimeconfig.dev.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\bin\Debug\netcoreapp2.0\A04_GenerischerBaum.dll
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\bin\Debug\netcoreapp2.0\A04_GenerischerBaum.pdb
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\obj\Debug\netcoreapp2.0\A04_GenerischerBaum.csprojResolveAssemblyReference.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\obj\Debug\netcoreapp2.0\A04_GenerischerBaum.csproj.CoreCompileInputs.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\obj\Debug\netcoreapp2.0\A04_GenerischerBaum.AssemblyInfoInputs.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\obj\Debug\netcoreapp2.0\A04_GenerischerBaum.AssemblyInfo.cs
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\obj\Debug\netcoreapp2.0\A04_GenerischerBaum.dll
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L05\A04_GenerischerBaum\obj\Debug\netcoreapp2.0\A04_GenerischerBaum.pdb
