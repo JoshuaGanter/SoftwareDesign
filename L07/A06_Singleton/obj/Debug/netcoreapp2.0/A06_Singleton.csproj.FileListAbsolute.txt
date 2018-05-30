@@ -1,0 +1,11 @@
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\bin\Debug\netcoreapp2.0\A06_Singleton.deps.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\bin\Debug\netcoreapp2.0\A06_Singleton.runtimeconfig.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\bin\Debug\netcoreapp2.0\A06_Singleton.runtimeconfig.dev.json
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\bin\Debug\netcoreapp2.0\A06_Singleton.dll
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\bin\Debug\netcoreapp2.0\A06_Singleton.pdb
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\obj\Debug\netcoreapp2.0\A06_Singleton.csprojResolveAssemblyReference.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\obj\Debug\netcoreapp2.0\A06_Singleton.csproj.CoreCompileInputs.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\obj\Debug\netcoreapp2.0\A06_Singleton.AssemblyInfoInputs.cache
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\obj\Debug\netcoreapp2.0\A06_Singleton.AssemblyInfo.cs
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\obj\Debug\netcoreapp2.0\A06_Singleton.dll
+C:\Users\gante\Documents\GitHub\SoftwareDesign\L07\A06_Singleton\obj\Debug\netcoreapp2.0\A06_Singleton.pdb
