@@ -1,0 +1,23 @@
+General:
+(h)elp ......................... List of commands you can use
+(q)uit ......................... Leave the game
+(e)xit ......................... Leave the game
+
+In adventure state:
+(g)o <direction> ............... Go in a specified direction, possible values: (n)orth, (e)ast, (s)outh, (w)est
+(l)ook [at] <entity,direction> . Look in a specified direction or at an entity
+(i)nventory .................... List the items in your inventory
+(t)ake <item> .................. Take an item
+(d)rop <item> .................. Drop an item
+(a)ttack <creature> ............ Attack a creature
+(s)peak [to] <character> ....... Speak to a character
+(u)se <item> [on <entity>] ..... Use an item [on another entity]
+
+In fight state:
+(h)it [with] [<item>] .......... Hit the enemy [with an specified item]
+(f)lee ......................... Try to get away
+(w)ait ......................... Pass your current turn
+(u)se: <item> [on <entity>] .... Use an item [on another entity]
+
+In dialog state:
+(p)ick <dialog_option> ......... Select the dialog option
