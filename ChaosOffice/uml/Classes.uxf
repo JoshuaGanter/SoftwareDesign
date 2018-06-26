@@ -24,14 +24,14 @@
 
 
 // This text will be stored with each diagram;  use it for notes.</help_text>
-  <zoom_level>5</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>255</x>
+      <x>368</x>
       <y>0</y>
-      <w>175</w>
-      <h>300</h>
+      <w>280</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>Game
 
@@ -45,53 +45,45 @@ _- _instance : Game_
 
 -
 
-_+ GetInstance(): Game_
+_+ GetInstance() : Game_
+_+ GetGameState() : GameState_
 _+ Main(args : string[0..*]) : void_
 
 - Game()
 
 + Play() : void
 
-- PrintHelp() : void
 - PrintIntroduction() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>570</x>
-      <y>455</y>
-      <w>265</w>
-      <h>175</h>
+      <x>872</x>
+      <y>728</y>
+      <w>424</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>Item
 
 -
 
-- _onPickup : PickupItemEventHandler
-- _onDrop : DropItemEventHandler
-- _onUse : UseItemEventHandler
+- _value : int
+- _tradeable : bool
 
 -
 
-+ Item(name : string, description : string)
-
-«delegate» PickupItemEventHandler(actor : Actor, self : Item, origin: Room) : void
-«delegate» DropItemEventHandler(actor : Actor, self : Item, target: Room) : void
-«delegate» UseItemEventHandler(actor : Actor, self : Item, target: Entity) : void
-
-+ OnPickup(Actor actor, Item self, Room source) : void
-+ OnDrop(Actor actor, Item self, Room destination) : void
-+ OnUse(Actor actor, Item self, Entity target) : void</panel_attributes>
++ Item(name : string, description : string, value : int)
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>625</x>
-      <y>255</y>
-      <w>155</w>
-      <h>115</h>
+      <x>960</x>
+      <y>408</y>
+      <w>248</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>/Entity/
 
@@ -112,10 +104,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>455</y>
-      <w>320</w>
-      <h>195</h>
+      <x>344</x>
+      <y>728</y>
+      <w>512</w>
+      <h>312</h>
     </coordinates>
     <panel_attributes>Creature
 
@@ -146,10 +138,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>905</y>
-      <w>185</w>
-      <h>145</h>
+      <x>312</x>
+      <y>1448</y>
+      <w>296</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>Player
 
@@ -164,10 +156,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>905</y>
-      <w>140</w>
-      <h>145</h>
+      <x>632</x>
+      <y>1448</y>
+      <w>224</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>Character
 
@@ -183,10 +175,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>700</y>
-      <w>105</w>
-      <h>130</h>
+      <x>584</x>
+      <y>1120</y>
+      <w>168</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>Actor
 
@@ -203,10 +195,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>845</x>
-      <y>455</y>
-      <w>285</w>
-      <h>145</h>
+      <x>1312</x>
+      <y>728</y>
+      <w>456</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>Room
 
@@ -215,7 +207,7 @@ _+ Main(args : string[0..*]) : void_
 - _onEnter : EnterRoomEventHandler
 - _onLeave : LeaveRoomEventHandler
 
-- _connections : Room[0..*]
+- _connections : Door[0..*]
 - _creatures : Creature[0..*]
 - _items : Item[0..*]
 
@@ -231,10 +223,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>445</x>
-      <y>645</y>
-      <w>15</w>
-      <h>65</h>
+      <x>672</x>
+      <y>1032</y>
+      <w>24</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -242,10 +234,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
-      <y>825</y>
-      <w>120</w>
-      <h>90</h>
+      <x>456</x>
+      <y>1320</y>
+      <w>192</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>220.0;10.0;220.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
@@ -253,10 +245,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>825</y>
-      <w>40</w>
-      <h>90</h>
+      <x>696</x>
+      <y>1320</y>
+      <w>64</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;60.0;100.0;60.0;160.0</additional_attributes>
@@ -264,10 +256,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>365</y>
-      <w>185</w>
-      <h>100</h>
+      <x>728</x>
+      <y>584</y>
+      <w>296</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>350.0;10.0;350.0;70.0;10.0;70.0;10.0;180.0</additional_attributes>
@@ -275,10 +267,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>695</x>
-      <y>365</y>
-      <w>15</w>
-      <h>100</h>
+      <x>1072</x>
+      <y>584</y>
+      <w>24</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
@@ -286,10 +278,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>730</x>
-      <y>365</y>
-      <w>135</w>
-      <h>100</h>
+      <x>1128</x>
+      <y>584</y>
+      <w>216</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;250.0;70.0;250.0;180.0</additional_attributes>
@@ -297,10 +289,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>795</x>
+      <x>1232</x>
       <y>0</y>
-      <w>175</w>
-      <h>65</h>
+      <w>280</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>_World_
 
@@ -315,17 +307,18 @@ _+ BuildWorld() : Room_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>485</x>
+      <x>736</x>
       <y>0</y>
-      <w>175</w>
-      <h>80</h>
+      <w>280</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>Dice
 
 -
 
 _- _instance : Dice_
-_- _random : Random_
+
+- _random : Random
 
 -
 
@@ -337,10 +330,10 @@ _+ Roll(faces : int) : int_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>605</x>
-      <y>905</y>
-      <w>160</w>
-      <h>165</h>
+      <x>928</x>
+      <y>1448</y>
+      <w>256</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>Dialog
 
@@ -359,10 +352,10 @@ _+ Roll(faces : int) : int_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>25</x>
+      <x>0</x>
       <y>0</y>
-      <w>175</w>
-      <h>60</h>
+      <w>280</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>«enumeration»
 GameState
@@ -371,6 +364,242 @@ GameState
 Adventure
 Dialog
 Fight</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>120</y>
+      <w>280</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>«enumeration»
+Direction
+-
+
+North
+East
+South
+West</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1544</x>
+      <y>112</y>
+      <w>280</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>«struct»
+ValidCommand
+-
+
++ CommandWord : string
++ CommandLetter : string
++ Params : string
++ ValidInStates : GameState[0..*]
++ Regex : string
++ Description : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1544</x>
+      <y>272</y>
+      <w>280</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>«struct»
+Command
+-
+
++ CommandWord : string
++ Params : string[0..*]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1232</x>
+      <y>128</y>
+      <w>280</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>_CommandParser_
+
+-
+
+_- _validCommands : ValidCommand[0..*]_
+
+-
+
+_+ PrintValidCommands() : void_
+_+ ParseCommand(input : string) : Command_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1968</x>
+      <y>728</y>
+      <w>232</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Door
+
+-
+
+- _key : Key
+- _nextRoom : Room
+
+-
+
++ GetKey() : Key
++ GetNextRoom() : Room</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>872</x>
+      <y>944</y>
+      <w>272</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Key
+
+-
+
+
+-
+
++ Key(name : string, description : string, value : int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>864</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>1112</y>
+      <w>464</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Weapon
+
+-
+
+- _attackDamage : int
+- _accuracy : int
+
+-
+
++ Weapon(name : string, description : string, value : int, attackDamage : int, accuracy : int)
+
++ GetAttackDamage() : int
++ GetAccuracy() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1160</x>
+      <y>864</y>
+      <w>24</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1304</x>
+      <y>1112</y>
+      <w>472</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ConsumeableItem
+
+-
+
+- _healthRegeneration : int
+
+-
+
++ ConsumeableItem(name : string, description : string, value : int, healthRegeneration : int)
+
++ GetHealthRegeneration() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1240</x>
+      <y>864</y>
+      <w>200</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0;230.0;250.0;230.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1808</x>
+      <y>1112</y>
+      <w>416</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ReadableItem
+
+-
+
+- _text : string
+
+-
+
++ ReadableItem(name : string, description : string, value : int, text : string)
+
++ GetText() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1272</x>
+      <y>864</y>
+      <w>656</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0;800.0;200.0;800.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1744</x>
+      <y>544</y>
+      <w>256</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Structures
+
+-
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

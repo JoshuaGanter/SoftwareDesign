@@ -14,7 +14,7 @@ In adventure state:
 (u)se <item> [on <entity>] ..... Use an item [on another entity]
 
 In fight state:
-(h)it [with] [<item>] .......... Hit the enemy [with an specified item]
+(h)it [with] [<weapon>] .......... Hit the enemy [with an specified item]
 (f)lee ......................... Try to get away
 (w)ait ......................... Pass your current turn
 (u)se: <item> [on <entity>] .... Use an item [on another entity]
