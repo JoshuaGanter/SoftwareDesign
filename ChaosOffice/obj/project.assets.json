@@ -681,24 +681,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Joshua\\.nuget\\packages\\": {},
+    "C:\\Users\\gante\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\_dev\\HFU\\SoftwareDesign\\ChaosOffice\\ChaosOffice.csproj",
+      "projectUniqueName": "c:\\Users\\gante\\Documents\\GitHub\\SoftwareDesign\\ChaosOffice\\ChaosOffice.csproj",
       "projectName": "ChaosOffice",
-      "projectPath": "D:\\_dev\\HFU\\SoftwareDesign\\ChaosOffice\\ChaosOffice.csproj",
-      "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
-      "outputPath": "D:\\_dev\\HFU\\SoftwareDesign\\ChaosOffice\\obj\\",
+      "projectPath": "c:\\Users\\gante\\Documents\\GitHub\\SoftwareDesign\\ChaosOffice\\ChaosOffice.csproj",
+      "packagesPath": "C:\\Users\\gante\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\gante\\Documents\\GitHub\\SoftwareDesign\\ChaosOffice\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\gante\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

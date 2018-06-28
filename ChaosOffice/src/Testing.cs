@@ -18,6 +18,16 @@ namespace ChaosOffice
             te.attr.Health = 2;
         }
     }
+
+    public class Superclass
+    {
+
+    }
+
+    public abstract class Lowerclass : Superclass
+    {
+
+    }
 }
 
 /*Test2 aTest = new Test2("a", (Test self, Test target) => {Console.WriteLine("Used " + self.AString + " with " + target.AString); return true;});
