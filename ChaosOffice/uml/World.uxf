@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>90</y>
+      <x>300</x>
+      <y>220</y>
       <w>250</w>
       <h>320</h>
     </coordinates>
@@ -16,21 +16,22 @@ Characters
 - Player (starting room)
 
 -
-Items/Events
+Items
 - your desk
 - your computer
 - flyswatter
 
 -
 Exits
-- east: Hallway</panel_attributes>
+- east: Hallway
+bg=#98FB98</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>90</y>
+      <x>620</x>
+      <y>220</y>
       <w>250</w>
       <h>320</h>
     </coordinates>
@@ -41,14 +42,14 @@ Characters
 - Janitor
 
 -
-Items/Events
+Items
 - fire extinguisher
-- jackets on coat rack
+- jackets
 - broom
 
 -
 Exits
-- north: Main entrance (not enterable)
+- north: Main entrance (locked)
 - east: Conference room
 - south: Lounge
 - west: Your office
@@ -58,8 +59,8 @@ Exits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>910</x>
-      <y>90</y>
+      <x>940</x>
+      <y>220</y>
       <w>250</w>
       <h>320</h>
     </coordinates>
@@ -68,21 +69,20 @@ Exits
 -
 Characters
 - Todd Howard
-- Mary Jane (customer)
-- Luke Haygen (customer)
+- Ashley Cheng
+- Craig Lafferty
 
 -
-Items/Events
+Items
 - building plan
-- cup of coffee
-- water bottle</panel_attributes>
+- cup of coffee</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>910</y>
+      <x>620</x>
+      <y>1040</y>
       <w>250</w>
       <h>300</h>
     </coordinates>
@@ -90,24 +90,24 @@ Items/Events
 
 -
 Characters
-- Gabe Newell
+- Gabe Newell (agressive)
 
 -
-Items/Events
-- Mighty Saviour (USB flash drive)
+Items
+*- Mighty Saviour (USB flash drive)*
 
 -
 Exits
-- north: Hallway
-- west: Ventilation shaft
+- north: Lounge (locked)
+- west: Ventilation shaft (locked)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>510</y>
+      <x>620</x>
+      <y>640</y>
       <w>250</w>
       <h>300</h>
     </coordinates>
@@ -118,7 +118,9 @@ Characters
 - Phil Spencer (your boss)
 
 -
-Items/Events
+Items
+- computer magazine
+- water bottle
 
 -
 Exits
@@ -130,8 +132,8 @@ Exits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>510</y>
+      <x>300</x>
+      <y>640</y>
       <w>250</w>
       <h>300</h>
     </coordinates>
@@ -143,19 +145,19 @@ Characters
 - Fly
 
 -
-Items/Events
+Items
 
 -
 Exits
-- south: Ventilation shaft
+- south: Ventilation shaft (locked)
 - east: Lounge</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>200</y>
+      <x>540</x>
+      <y>330</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -165,8 +167,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>200</y>
+      <x>860</x>
+      <y>330</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -176,41 +178,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>400</y>
-      <w>30</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>700</x>
-      <y>800</y>
-      <w>30</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>510</x>
-      <y>710</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>380</x>
-      <y>800</y>
+      <x>710</x>
+      <y>530</y>
       <w>30</w>
       <h>130</h>
     </coordinates>
@@ -220,30 +189,8 @@ Exits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>0</y>
-      <w>250</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Main entrance (not enterable)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>700</x>
-      <y>30</y>
-      <w>30</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>270</x>
-      <y>910</y>
+      <x>300</x>
+      <y>1040</y>
       <w>250</w>
       <h>300</h>
     </coordinates>
@@ -254,7 +201,7 @@ Characters
 - Rat
 
 -
-Items/Events
+Items
 
 -
 Exits
@@ -265,12 +212,259 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>1060</y>
+      <x>540</x>
+      <y>370</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>370</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>530</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>930</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>930</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>930</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>930</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>750</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>790</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>1170</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>1210</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>60</x>
+      <y>270</y>
+      <w>230</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>It is late afternoon and you are
+tirelessly working on a game for
+weeks now.
+A very critical bug is still in the
+game and you can't find a
+way to fix it.
+Just now your colleague sent you
+an email that he fixed the bug.
+You have to get to his office
+and receive the
+*Mighty Saviour (USB flash drive)*
+with the code fixing the issue..</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1200</x>
+      <y>280</y>
+      <w>230</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Todd Howard holds a meeting in
+the conference room. He tells the
+producers his vision of the next
+incarnation of Skyrim.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>630</x>
+      <y>80</y>
+      <w>230</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>In the hallway the janitor is
+wiping the floor. As you walk
+over it, you mess up the drying
+surface.
+He is truely upset about it, if you
+talk to him he's complaining that
+nobody appreciates his work.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>880</x>
+      <y>690</y>
+      <w>230</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Phil Spencer sits at the couch in
+the Lounge. He is worried about
+his employee, Gabe Newell (your
+colleague).
+Working on a secret game he
+appearently became insane, so
+Phil had to lock him up.
+Even if you tell him that Gabe
+worked on a fix for your game he
+won't give you the keys.
+But if you bring him a tea, he might
+rethink his decision.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>60</x>
+      <y>1090</y>
+      <w>230</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Without a plan you may not
+enter the ventilation shaft. Rumors
+say that even the mightiest facility
+managers lost track in the branched
+corridors and never got to see the
+light of day again.
+But with the building plan in your
+hands, you might reach your
+colleague's office.
+On the way you meet a friendly,
+talkative rat.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>60</x>
+      <y>700</y>
+      <w>230</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>In the kitchen Chefkoch is
+annoyed by a Fly flying around.
+If you kill the Fly he might make
+you a coffee.. Or a tea.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>880</x>
+      <y>1040</y>
+      <w>230</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>Days of isolation, the pressure
+of developing a secret game and
+the absence of sleep made Gabe
+sick. He immediately attacks you
+and probably only sent you the mail
+to get out of his office.
+You have to kill him, sadly.
+But once you search his office, you
+find a USB flash drive with the
+words "Mighty Saviour" scratched
+in on it's surface.
+When picking up the flash drive
+you win the game. Or lose it, since
+it infects your computer with a
+virus once you put it in your
+computer.
+Anyway the game is over.</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

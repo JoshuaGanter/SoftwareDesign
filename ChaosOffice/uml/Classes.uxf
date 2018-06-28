@@ -437,7 +437,7 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
       <x>1175</x>
       <y>485</y>
       <w>145</w>
-      <h>90</h>
+      <h>105</h>
     </coordinates>
     <panel_attributes>Door
 
@@ -445,11 +445,13 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
 
 - _key : Key
 - _nextRoom : Room
+- _lockedMessage : string
 
 -
 
 + GetKey() : Key
-+ GetNextRoom() : Room</panel_attributes>
++ GetNextRoom() : Room
++ GetLockedMessage() : string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -507,13 +509,13 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1000</x>
-      <y>745</y>
-      <w>15</w>
-      <h>65</h>
+      <x>795</x>
+      <y>575</y>
+      <w>105</w>
+      <h>235</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;350.0;190.0;350.0;190.0;450.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -521,7 +523,7 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
       <x>815</x>
       <y>800</y>
       <w>295</w>
-      <h>75</h>
+      <h>85</h>
     </coordinates>
     <panel_attributes>ConsumeableItem
 
@@ -531,7 +533,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
 
 -
 
-+ ConsumeableItem(name : string, description : string, value : int, healthRegeneration : int)</panel_attributes>
++ ConsumeableItem(name : string, description : string, value : int, healthRegeneration : int)
+
++ GetHealthRegeneration() : int
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -544,65 +549,6 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;10.0;60.0;400.0;10.0;400.0;10.0;450.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1130</x>
-      <y>800</y>
-      <w>260</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>ReadableItem
-
--
-
-- _text : string
-
--
-
-+ ReadableItem(name : string, description : string, value : int, text : string)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1060</x>
-      <y>745</y>
-      <w>145</w>
-      <h>65</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0;270.0;60.0;270.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>805</x>
-      <y>685</y>
-      <w>295</w>
-      <h>65</h>
-    </coordinates>
-    <panel_attributes>_UseableItem_
-
--
-
-
--
-
-+ OnUse() : void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>785</x>
-      <y>575</y>
-      <w>90</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0;160.0;160.0;160.0;220.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
