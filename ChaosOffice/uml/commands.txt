@@ -11,13 +11,12 @@ In adventure state:
 (d)rop <item> .................. Drop an item
 (a)ttack <creature> ............ Attack a creature
 (s)peak [to] <character> ....... Speak to a character
-(u)se <item> [on <entity>] ..... Use an item [on another entity]
+(c)onsume <item> ............... Consume an item
 
 In fight state:
-(h)it [with] [<weapon>] .......... Hit the enemy [with an specified item]
-(f)lee ......................... Try to get away
+(h)it [with] [<weapon>] ........ Hit the enemy [with an specified item]
 (w)ait ......................... Pass your current turn
-(u)se: <item> [on <entity>] .... Use an item [on another entity]
+(c)onsume: <item> .............. Consume an item
 
 In dialog state:
 (p)ick <dialog_option> ......... Select the dialog option
