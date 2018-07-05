@@ -1,6 +1,9 @@
+using System;
+
 namespace ChaosOffice
 {
-    public enum GameState
+    [FlagsAttribute]
+    public enum GameStates
     {
         Adventure,
         Dialog,

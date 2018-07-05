@@ -24,14 +24,14 @@
 
 
 // This text will be stored with each diagram;  use it for notes.</help_text>
-  <zoom_level>5</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>30</y>
-      <w>175</w>
-      <h>170</h>
+      <x>371</x>
+      <y>42</y>
+      <w>245</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>Game
 
@@ -59,10 +59,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>745</x>
-      <y>485</y>
-      <w>265</w>
-      <h>80</h>
+      <x>812</x>
+      <y>679</y>
+      <w>371</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Item
 
@@ -80,10 +80,10 @@ _+ Main(args : string[0..*]) : void_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>805</x>
-      <y>275</y>
-      <w>180</w>
-      <h>115</h>
+      <x>896</x>
+      <y>399</y>
+      <w>252</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>/Entity/
 
@@ -97,17 +97,16 @@ _+ Main(args : string[0..*]) : void_
 + Entity(name : string, description : string)
 
 + GetName() : string
-+ GetDescription() : string
-+ Equals(other : Entity) : bool</panel_attributes>
++ GetDescription() : string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>415</x>
-      <y>450</y>
-      <w>320</w>
-      <h>240</h>
+      <x>350</x>
+      <y>630</y>
+      <w>448</w>
+      <h>343</h>
     </coordinates>
     <panel_attributes>Creature
 
@@ -117,9 +116,10 @@ _+ Main(args : string[0..*]) : void_
 - _maxHealth : int
 - _baseDefense : int
 - _baseAttack : int
-- _currentRoom : Room
 - _currentTarget : Creature
 - _isAggressive : bool
+
+# _currentRoom : Room
 
 -
 
@@ -133,27 +133,28 @@ _+ Main(args : string[0..*]) : void_
 
 + DrainHealth(amount : int) : bool
 + RestoreHealth(amount : int) : void
-+ CheckSkill(base : int, difficulty : int) : bool
-+ GoToRoom(target : Room) : void
++ CheckSkill(baseValue : int, difficulty : int) : bool
++ GoToRoom(direction : string) : void
 + Say(phrase : string) : void
-+ Attack(target : Creature) : void
++ Attack(targetName : string) : void
 + HitTarget() : void
-+ HitTarget(weapon : Weapon) : void</panel_attributes>
++ HitTarget(weaponName : string) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>345</x>
-      <y>960</y>
-      <w>185</w>
-      <h>125</h>
+      <x>252</x>
+      <y>1344</y>
+      <w>259</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>Player
 
 -
 
 _- _instance : Player_
+- _currentDialog : Dialog
 
 -
 
@@ -164,16 +165,16 @@ _+ GetInstance() : Player_
 -
 
 + GetCurrentRoom() : Room
-+ SpeakTo(target : Character) : void</panel_attributes>
++ SpeakTo(characterName : string) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>935</y>
-      <w>140</w>
-      <h>90</h>
+      <x>602</x>
+      <y>1309</y>
+      <w>196</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>Character
 
@@ -191,10 +192,10 @@ _+ GetInstance() : Player_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>565</x>
-      <y>730</y>
-      <w>105</w>
-      <h>130</h>
+      <x>518</x>
+      <y>1022</y>
+      <w>189</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>Actor
 
@@ -204,18 +205,18 @@ _+ GetInstance() : Player_
 
 -
 
-+ PickupItem(Item item) : void
-+ DropItem(Item item) : void
-+ UseItem(Item item) : void</panel_attributes>
++ TakeItem(itemName : string) : void
++ DropItem(itemName : string) : void
++ UseItem(itemName : string) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1045</x>
-      <y>485</y>
-      <w>285</w>
-      <h>110</h>
+      <x>1232</x>
+      <y>679</y>
+      <w>399</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>Room
 
@@ -236,21 +237,21 @@ _+ GetInstance() : Player_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>685</y>
-      <w>15</w>
-      <h>55</h>
+      <x>637</x>
+      <y>966</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>855</y>
-      <w>170</w>
-      <h>115</h>
+      <x>378</x>
+      <y>1197</y>
+      <w>238</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;320.0;100.0;10.0;100.0;10.0;210.0</additional_attributes>
@@ -258,10 +259,10 @@ _+ GetInstance() : Player_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>635</x>
-      <y>855</y>
-      <w>40</w>
-      <h>90</h>
+      <x>658</x>
+      <y>1197</y>
+      <w>56</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;60.0;100.0;60.0;160.0</additional_attributes>
@@ -269,10 +270,10 @@ _+ GetInstance() : Player_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>655</x>
-      <y>385</y>
-      <w>185</w>
-      <h>75</h>
+      <x>686</x>
+      <y>539</y>
+      <w>259</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>350.0;10.0;350.0;90.0;10.0;90.0;10.0;130.0</additional_attributes>
@@ -280,10 +281,10 @@ _+ GetInstance() : Player_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>385</y>
-      <w>15</w>
-      <h>110</h>
+      <x>987</x>
+      <y>539</y>
+      <w>21</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
@@ -291,10 +292,10 @@ _+ GetInstance() : Player_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>905</x>
-      <y>385</y>
-      <w>160</w>
-      <h>110</h>
+      <x>1036</x>
+      <y>539</y>
+      <w>224</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0;300.0;160.0;300.0;200.0</additional_attributes>
@@ -302,10 +303,10 @@ _+ GetInstance() : Player_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>940</x>
-      <y>10</y>
-      <w>175</w>
-      <h>65</h>
+      <x>1085</x>
+      <y>14</y>
+      <w>245</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>_World_
 
@@ -320,10 +321,10 @@ _+ BuildWorld() : Room_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>30</y>
-      <w>175</w>
-      <h>105</h>
+      <x>693</x>
+      <y>42</y>
+      <w>245</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>Dice
 
@@ -343,10 +344,10 @@ _+ Roll(faces : int) : int_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1165</x>
-      <y>945</y>
-      <w>350</w>
-      <h>165</h>
+      <x>1400</x>
+      <y>1323</y>
+      <w>490</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>Dialog
 
@@ -369,10 +370,10 @@ _+ Roll(faces : int) : int_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>165</x>
-      <y>30</y>
-      <w>175</w>
-      <h>60</h>
+      <x>0</x>
+      <y>42</y>
+      <w>245</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>«enumeration»
 GameState
@@ -386,10 +387,10 @@ Fight</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>165</x>
-      <y>105</y>
-      <w>175</w>
-      <h>70</h>
+      <x>0</x>
+      <y>147</y>
+      <w>245</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>«enumeration»
 Direction
@@ -404,10 +405,10 @@ West</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1165</x>
-      <y>55</y>
-      <w>615</w>
-      <h>125</h>
+      <x>1400</x>
+      <y>77</y>
+      <w>861</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>«struct»
 AvailableCommand
@@ -429,10 +430,10 @@ AvailableCommand
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>940</x>
-      <y>110</y>
-      <w>175</w>
-      <h>80</h>
+      <x>1085</x>
+      <y>154</y>
+      <w>245</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>_CommandParser_
 
@@ -449,10 +450,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1405</x>
-      <y>485</y>
-      <w>145</w>
-      <h>105</h>
+      <x>1736</x>
+      <y>679</y>
+      <w>203</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>Door
 
@@ -472,10 +473,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>745</x>
-      <y>620</y>
-      <w>170</w>
-      <h>65</h>
+      <x>812</x>
+      <y>868</y>
+      <w>238</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Key
 
@@ -490,10 +491,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>825</x>
-      <y>560</y>
-      <w>15</w>
-      <h>70</h>
+      <x>924</x>
+      <y>784</y>
+      <w>21</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -501,10 +502,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>710</x>
-      <y>720</y>
-      <w>290</w>
-      <h>105</h>
+      <x>763</x>
+      <y>1008</y>
+      <w>406</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>Weapon
 
@@ -524,10 +525,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>995</x>
-      <y>560</y>
-      <w>125</w>
-      <h>170</h>
+      <x>1162</x>
+      <y>784</y>
+      <w>175</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;260.0;230.0;260.0;230.0;320.0</additional_attributes>
@@ -535,10 +536,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1035</x>
-      <y>720</y>
-      <w>295</w>
-      <h>85</h>
+      <x>1218</x>
+      <y>1008</y>
+      <w>413</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>ConsumeableItem
 
@@ -557,10 +558,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>935</x>
-      <y>560</y>
-      <w>40</w>
-      <h>170</h>
+      <x>1078</x>
+      <y>784</y>
+      <w>56</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;10.0;60.0;260.0;10.0;260.0;10.0;320.0</additional_attributes>
@@ -568,10 +569,10 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>930</x>
-      <y>385</y>
-      <w>560</w>
-      <h>110</h>
+      <x>1071</x>
+      <y>539</y>
+      <w>784</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0;1100.0;130.0;1100.0;200.0</additional_attributes>
@@ -579,32 +580,30 @@ _+ ParseCommand(input : string) : PlayerCommand_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1170</x>
-      <y>230</y>
-      <w>335</w>
-      <h>100</h>
+      <x>1407</x>
+      <y>322</y>
+      <w>469</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>PlayerCommand
 
 -
 
-- _onExecute : CommandExecuteEventHandler
 - _commandWord : string
 - _params : string[0..*]
 
 -
 
-+ Command(commandWord : string, params : string[0..*], onExecute : CommandExecuteEventHandler)
-+ Execute() : void</panel_attributes>
++ Command(commandWord : string, params : string[0..*], onExecute : CommandExecuteEventHandler)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1535</x>
-      <y>230</y>
-      <w>260</w>
-      <h>65</h>
+      <x>1918</x>
+      <y>322</y>
+      <w>364</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>«delegate»
 CommandExecuteEventHandler
@@ -619,10 +618,10 @@ CommandExecuteEventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>335</x>
-      <y>65</y>
-      <w>105</w>
-      <h>15</h>
+      <x>238</x>
+      <y>91</y>
+      <w>147</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
@@ -630,10 +629,10 @@ CommandExecuteEventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>565</x>
+      <x>560</x>
       <y>0</y>
-      <w>80</w>
-      <h>75</h>
+      <w>112</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>80.0;130.0;140.0;130.0;140.0;10.0;10.0;10.0;10.0;60.0</additional_attributes>
@@ -641,10 +640,10 @@ CommandExecuteEventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>795</x>
+      <x>882</x>
       <y>0</y>
-      <w>80</w>
-      <h>75</h>
+      <w>112</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>80.0;130.0;140.0;130.0;140.0;10.0;10.0;10.0;10.0;60.0</additional_attributes>
@@ -652,10 +651,10 @@ CommandExecuteEventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1110</x>
-      <y>135</y>
-      <w>65</w>
-      <h>15</h>
+      <x>1323</x>
+      <y>189</y>
+      <w>91</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
@@ -663,10 +662,10 @@ CommandExecuteEventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1655</x>
-      <y>175</y>
-      <w>15</w>
-      <h>65</h>
+      <x>2086</x>
+      <y>245</y>
+      <w>21</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -674,10 +673,10 @@ CommandExecuteEventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1500</x>
-      <y>255</y>
-      <w>45</w>
-      <h>15</h>
+      <x>1869</x>
+      <y>357</y>
+      <w>63</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
@@ -685,10 +684,10 @@ CommandExecuteEventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1325</x>
-      <y>520</y>
-      <w>90</w>
-      <h>20</h>
+      <x>1624</x>
+      <y>728</y>
+      <w>126</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -698,10 +697,10 @@ m2=0..4</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1945</x>
-      <y>5</y>
-      <w>40</w>
-      <h>50</h>
+      <x>2492</x>
+      <y>7</y>
+      <w>56</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Interface
 --
@@ -710,36 +709,14 @@ Operation2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLInterface</id>
-    <coordinates>
-      <x>990</x>
-      <y>270</y>
-      <w>70</w>
-      <h>35</h>
-    </coordinates>
-    <panel_attributes>IEquatable&lt;Entity&gt;</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>980</x>
-      <y>275</y>
-      <w>50</w>
-      <h>25</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;30.0;80.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1580</x>
-      <y>850</y>
-      <w>165</w>
-      <h>75</h>
+      <x>1981</x>
+      <y>1190</y>
+      <w>231</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>EntityList&lt;Entity&gt; : List&lt;Entity&gt;
+    <panel_attributes>EntityList&lt;T : Entity&gt; : List&lt;T&gt;
 
 -
 
@@ -747,16 +724,17 @@ Operation2</panel_attributes>
 -
 
 + Contains(entityName : string) : bool
++ Get(entityName : string) : T
 + Remove(entityName : string) : bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
-      <y>765</y>
-      <w>925</w>
-      <h>125</h>
+      <x>700</x>
+      <y>1071</y>
+      <w>1295</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0;50.0;230.0;1830.0;230.0</additional_attributes>
@@ -764,10 +742,10 @@ Operation2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1325</x>
-      <y>535</y>
-      <w>265</w>
-      <h>340</h>
+      <x>1624</x>
+      <y>749</y>
+      <w>371</w>
+      <h>476</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0;50.0;660.0;510.0;660.0</additional_attributes>
@@ -775,10 +753,10 @@ Operation2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>730</x>
-      <y>965</y>
-      <w>445</w>
-      <h>15</h>
+      <x>791</x>
+      <y>1351</y>
+      <w>623</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;870.0;10.0</additional_attributes>
@@ -786,10 +764,10 @@ Operation2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>930</y>
-      <w>80</w>
-      <h>75</h>
+      <x>455</x>
+      <y>1302</y>
+      <w>112</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>80.0;130.0;140.0;130.0;140.0;10.0;10.0;10.0;10.0;60.0</additional_attributes>
