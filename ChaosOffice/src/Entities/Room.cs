@@ -5,9 +5,9 @@ namespace ChaosOffice
 {
     public class Room : Entity
     {
-        public EntityList<Creature> Creatures;
-        public EntityList<Item> Items;
-        public Dictionary<string, Door> Connections;
+        public EntityList<Creature> Creatures {get; private set;}
+        public EntityList<Item> Items {get; private set;}
+        public Dictionary<string, Door> Connections {get; private set;}
         
         public Room(string name, string description) : base(name, description)
         {

@@ -27,5 +27,19 @@ namespace ChaosOffice
             }
             return null;
         }
+
+        public bool TryGet(string entityName, out T entity)
+        {
+            if(Contains(entityName))
+            {
+                entity = Get(entityName);
+                return true;
+            }
+            else
+            {
+                entity = null;
+                return false;
+            }
+        }
     }
 }

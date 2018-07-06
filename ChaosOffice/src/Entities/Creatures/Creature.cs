@@ -11,7 +11,7 @@ namespace ChaosOffice
         public int BaseDefense {get; private set;}
         public int BaseAttack {get; private set;}
         public bool IsAgressive {get; private set;}
-        public Creature _currentTarget;
+        public Creature CurrentTarget;
 
         public Creature(string name, string description, int maxHealth, int baseDefense, int baseAttack) : base(name, description)
         {
@@ -59,9 +59,9 @@ namespace ChaosOffice
 
         public void BeatTarget()
         {
-            if (_currentTarget.CheckSkill(_currentTarget.BaseDefense, BaseAttack))
+            if (CurrentTarget.CheckSkill(CurrentTarget.BaseDefense, BaseAttack))
             {
-                if (_currentTarget.DrainHealth(1))
+                if (CurrentTarget.DrainHealth(1))
                 {
                     // we've won the fight.
                 }

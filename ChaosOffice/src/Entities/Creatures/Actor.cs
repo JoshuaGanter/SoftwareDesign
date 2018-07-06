@@ -4,7 +4,7 @@ namespace ChaosOffice
 {
     public class Actor : Creature
     {
-        public EntityList<Item> Inventory;
+        public EntityList<Item> Inventory {get; private set;}
 
         public Actor(string name, string description, int maxHealth, int baseDefense, int baseAttack) : base(name, description, maxHealth, baseDefense, baseAttack)
         {

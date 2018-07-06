@@ -20,7 +20,7 @@ namespace ChaosOffice
         }
 
         public bool IsRunning {get; private set;}
-        public GameStates GameState {get; private set;}
+        public GameStates GameState;
         static void Main(string[] args)
         {
             Game.Instance.Play();
@@ -54,7 +54,7 @@ namespace ChaosOffice
             IsRunning = true;
             while(IsRunning)
             {
-                Console.Write(": ");
+                Console.Write("> ");
                 PlayerCommand command = CommandParser.ParseCommand(Console.ReadLine());
                 switch (command.Command)
                 {
