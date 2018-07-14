@@ -7,39 +7,38 @@ namespace ChaosOffice
     {
         public bool Contains(string entityName)
         {
-            foreach(Entity entity in this)
-            {
-                if (entity.Name == entityName)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return Exists(entity => entity.Name.ToLower() == entityName.ToLower());
         }
+        
         public T Get(string entityName)
         {
-            foreach(Entity entity in this)
+            int entityIndex = FindIndex(entity => entity.Name.ToLower() == entityName.ToLower());
+            if (entityIndex != -1)
             {
-                if (entity.Name == entityName)
-                {
-                    return (T) entity;
-                }
+                return this[entityIndex];
             }
-            return null;
+            else
+            {
+                return null;
+            }
+        }
+
+        public bool Remove(string entityName)
+        {
+            if (TryGet(entityName, out T entity))
+            {
+                return Remove(entity);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool TryGet(string entityName, out T entity)
         {
-            if(Contains(entityName))
-            {
-                entity = Get(entityName);
-                return true;
-            }
-            else
-            {
-                entity = null;
-                return false;
-            }
+            entity = Get(entityName);
+            return entity != null;
         }
     }
 }

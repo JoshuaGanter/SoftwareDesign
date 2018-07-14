@@ -33,17 +33,14 @@ namespace ChaosOffice
 
         private void PrintIntroduction()
         {
-            Console.WriteLine("It is late afternoon and you are tirelessly working on a game for weeks now. A critical bug is still in the game and you can't find a way to fix it.");
-            Console.Write("Just now your colleague sent you an email that he fixed the bug. You have to get to his office and receive the ");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("Mighty Saviour");
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine(" with the code fixing the issue.");
-            Console.WriteLine("But be aware, there may be challenges to master, fears to overcome and enemies to fight on your journey..");
-            Console.WriteLine("");
-            Console.WriteLine("Press any key to continue..");
+            WriteLine("It is late afternoon and you are tirelessly working on a game for weeks now. A critical bug is still in the game and you can't find a way to fix it.");
+            Write("Just now your colleague sent you an email that he fixed the bug. You have to get to his office and receive the ");
+            Write("Mighty Saviour", ConsoleColor.Yellow);
+            WriteLine(" with the code fixing the issue.");
+            WriteLine("But be aware, there may be challenges to master, fears to overcome and enemies to fight on your journey..");
+            WriteLine();
+            WriteLine("[Continue]");
             Console.ReadKey(true);
-            Console.Clear();
         }
 
         public void Play()
@@ -55,7 +52,8 @@ namespace ChaosOffice
             while(IsRunning)
             {
                 Console.Write("> ");
-                PlayerCommand command = CommandParser.ParseCommand(Console.ReadLine());
+                PlayerCommand command;
+                command = CommandParser.ParseCommand(Console.ReadLine());
                 switch (command.Command)
                 {
                     case "h":
@@ -68,11 +66,17 @@ namespace ChaosOffice
                         break;
                     case "g":
                     case "go":
-                        Player.Instance.GoTo(command.Parameter);
+                        if (CheckGameState(GameStates.Adventure))
+                        {
+                            Player.Instance.GoTo(command.Parameter);
+                        }
                         break;
                     case "l":
                     case "look":
-                        Player.Instance.LookAt(command.Parameter);
+                        if (CheckGameState(GameStates.Adventure))
+                        {
+                            Player.Instance.LookAt(command.Parameter);
+                        }
                         break;
                     case "i":
                     case "inventory":
@@ -80,36 +84,59 @@ namespace ChaosOffice
                         break;
                     case "t":
                     case "take":
-                        Player.Instance.TakeItem(command.Parameter);
+                        if (CheckGameState(GameStates.Adventure))
+                        {
+                            Player.Instance.TakeItem(command.Parameter);
+                        }
                         break;
                     case "d":
                     case "drop":
-                        Player.Instance.DropItem(command.Parameter);
+                        if (CheckGameState(GameStates.Adventure))
+                        {
+                            Player.Instance.DropItem(command.Parameter);
+                        }
                         break;
                     case "a":
                     case "attack":
-                        Player.Instance.Attack(command.Parameter);
+                        if (CheckGameState(GameStates.Adventure))
+                        {
+                            Player.Instance.Attack(command.Parameter);
+                        }
                         break;
                     case "s":
                     case "speak":
-                        Player.Instance.SpeakTo(command.Parameter);
+                        if (CheckGameState(GameStates.Adventure))
+                        {
+                            Player.Instance.SpeakTo(command.Parameter);
+                        }
                         break;
                     case "c":
                     case "consume":
-                        Player.Instance.ConsumeItem(command.Parameter);
+                        if (CheckGameState(GameStates.Adventure | GameStates.Fight))
+                        {
+                            Player.Instance.ConsumeItem(command.Parameter);
+                        }
                         break;
                     case "b":
                     case "beat":
-                        Player.Instance.BeatTarget(command.Parameter);
-                        // finish fighting round
+                        if (CheckGameState(GameStates.Fight))
+                        {
+                            Player.Instance.BeatTarget(command.Parameter);
+                        }
                         break;
                     case "w":
                     case "wait":
-                        // finish fighting round
+                        if (CheckGameState(GameStates.Fight))
+                        {
+                            FinishFightingRound();
+                        }
                         break;
                     case "p":
                     case "pick":
-                        Player.Instance.PickDialogLine(command.Parameter);
+                        if (CheckGameState(GameStates.Dialog))
+                        {
+                            Player.Instance.PickDialogLine(command.Parameter);
+                        }
                         break;
                     case "":
                         break;
@@ -117,7 +144,65 @@ namespace ChaosOffice
                         Console.WriteLine("Unknown command.");
                         break;
                 }
+
+                if (Player.Instance.Health <= 0)
+                {
+                    WriteLine("On your journey to find the fix for your code, you were defeated. Your blood now sprinkles the walls in the office. After a short time you are forgotten and replaced.");
+                    WriteLine("GAME OVER", ConsoleColor.Red);
+                    IsRunning = false;
+                }
+
+                if (Player.Instance.Inventory.Contains("mighty saviour"))
+                {
+                    WriteLine("You've overcome all the challenges drawn to you. You received the Mighty Saviour, held in the claws of a lost individual. But once you've put the USB flash drive in to your computer, everything turns black. Black as the darkest night..");
+                    IsRunning = false;
+                }
             }
+            WriteLine();
+            WriteLine("[Close]");
+            Console.ReadKey(true);
+        }
+
+        public void FinishFightingRound()
+        {
+            Creature enemy = Player.Instance.CurrentTarget;
+            if (enemy.Health > 0)
+            {
+                enemy.BeatTarget();
+            }
+            else
+            {
+                GameState = GameStates.Adventure;
+                Player.Instance.CurrentTarget = null;
+                enemy.CurrentTarget = null;
+            }
+        }
+
+        public bool CheckGameState(GameStates gameStates)
+        {
+            if ((GameState & gameStates) != 0)
+            {
+                return true;
+            }
+            else
+            {
+                Player.Instance.Say("I can't do that now.");
+                return false;
+            }
+        }
+
+        public static void Write(string words, ConsoleColor foregroundColor = ConsoleColor.Gray, ConsoleColor backgroundColor = ConsoleColor.Black)
+        {
+            Console.ForegroundColor = foregroundColor;
+            Console.BackgroundColor = backgroundColor;
+            Console.Write(words);
+        }
+
+        public static void WriteLine(string words = "", ConsoleColor foregroundColor = ConsoleColor.Gray, ConsoleColor backgroundColor = ConsoleColor.Black)
+        {
+            Console.ForegroundColor = foregroundColor;
+            Console.BackgroundColor = backgroundColor;
+            Console.WriteLine(words);
         }
     }
 }

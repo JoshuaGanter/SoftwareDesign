@@ -14,7 +14,7 @@ namespace ChaosOffice
             string parameter = "";
             if (splitted.Length == 2)
             {
-                parameter = splitted[1];
+                parameter = splitted[1].ToLower();
             }
             return new PlayerCommand(command, parameter);
         }

@@ -20,60 +20,59 @@ namespace ChaosOffice
             }
         }
 
-        public Room CurrentRoom
-        {
-            get
-            {
-                return _currentRoom;
-            }
-        }
-
         public int CurrentDialogLayerIndex;
 
-        private Player() : base("You", "", 100, 10, 10)
+        private Player() : base("Player", "", 20, 12, 4, 0, 2, false, ConsoleColor.Yellow)
         {
             CurrentDialogLayerIndex = 0;
         }
 
-        
-
         public void GoTo(string direction)
         {
-            if (_currentRoom.Connections.ContainsKey(direction))
+            if (CurrentRoom.Connections.TryGetValue(direction, out Door door))
             {
-                Door door = _currentRoom.Connections[direction];
-                if (door.Key != null)
+                if (door.Key == null || Inventory.Contains(door.Key.Name))
                 {
-                    if (!Inventory.Contains(door.Key.Name))
-                    {
-                        Console.WriteLine(door.LockedMessage);
-                        return;
-                    }
+                    EnterRoom(door.NextRoom);
                 }
-                EnterRoom(door.NextRoom);
+                else
+                {
+                    Game.WriteLine(door.LockedMessage);
+                }
             }
             else
             {
-                Say("There seems to be no exit there.");
+                Say("There is no exit in this direction.");
             }
         }
 
         public override void EnterRoom(Room room)
         {
-            _currentRoom = room;
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine(" " + room.Name + " ");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine(room.Description);
+            CurrentRoom = room;
+            CurrentRoom.PrintRoomIntroduction();
+            if (CurrentRoom.TryGetAggressiveCreature(out Creature aggressor))
+            {
+                aggressor.Print("Just as you entered the room, ", " is attacking you!");
+                EngageFight(aggressor);
+            }
+            else
+            {
+                CurrentRoom.ExamineRoom();
+            }
         }
 
         public void Attack(string targetName)
         {
-            if (_currentRoom.Creatures.Contains(targetName))
+            if (CurrentRoom.Creatures.TryGet(targetName, out Creature creature))
             {
-                // engage fight
+                if (creature.Health > 0)
+                {
+                    EngageFight(creature);
+                }
+                else
+                {
+                    Say("This one's already dead.");
+                }
             }
             else
             {
@@ -81,30 +80,37 @@ namespace ChaosOffice
             }
         }
 
-        public void LookAt(string targetName)
+        public void EngageFight(Creature creature)
+        {
+            CurrentTarget = creature;
+            creature.CurrentTarget = this;
+            Game.Instance.GameState = GameStates.Fight;
+            CurrentTarget.Print("You are now fighting: ");
+        }
+
+        public void LookAt(string targetName = "")
         {
             if (targetName == "")
             {
-                Console.WriteLine("You see:");
-                foreach (Item item in _currentRoom.Items)
-                {
-                    Console.WriteLine("- " + item.Name);
-                }
+                CurrentRoom.ExamineRoom();
             }
             else
             {
-                EntityList<Entity> roomEntities = _currentRoom.GetAllEntities();
-                if (roomEntities.Contains(targetName))
+                if (CurrentRoom.GetAllEntities().TryGet(targetName, out Entity entity))
                 {
-                    Console.WriteLine(roomEntities.Get(targetName).Description);
+                    Game.WriteLine(entity.Description);
                 }
-                else if (_currentRoom.Connections.ContainsKey(targetName))
+                else if (CurrentRoom.Connections.TryGetValue(targetName, out Door door))
                 {
-                    Console.WriteLine(_currentRoom.Connections[targetName].Description);
+                    Game.WriteLine(door.Description);
+                }
+                else if (Inventory.TryGet(targetName, out Item item))
+                {
+                    Game.WriteLine(item.Description);
                 }
                 else
                 {
-                    Say("Where should I look at?");
+                    Say("I can't see that anywhere.");
                 }
             }
         }
@@ -113,9 +119,10 @@ namespace ChaosOffice
         {
             if (Inventory.Count != 0)
             {
+                Game.WriteLine("In your pockets you find:");
                 foreach(Item item in Inventory)
                 {
-                    Console.WriteLine("- " + item.Name);
+                    item.Print("- ");
                 }
             }
             else
@@ -126,25 +133,39 @@ namespace ChaosOffice
 
         public void SpeakTo(string characterName)
         {
-            if (_currentRoom.Creatures.TryGet(characterName, out Creature creature))
+            if (CurrentRoom.Creatures.TryGet(characterName, out Creature creature))
             {
-                Character character = creature as Character;
-                if (character != null)
+                if (creature.IsAlive)
                 {
-                    Game.Instance.GameState = GameStates.Dialog;
-                    CurrentTarget = character;
-                    character.CurrentTarget = this;
-                    CurrentDialogLayerIndex = 0;
-                    character.Say(CurrentDialogLayerIndex);
+                    Character character = creature as Character;
+                    if (character != null)
+                    {
+                        if (character.Dialog != null)
+                        {
+                            Game.Instance.GameState = GameStates.Dialog;
+                            CurrentTarget = character;
+                            character.CurrentTarget = this;
+                            CurrentDialogLayerIndex = 0;
+                            character.Say(CurrentDialogLayerIndex);
+                        }
+                        else
+                        {
+                            Say("I think this person won't talk to me.");
+                        }
+                    }
+                    else
+                    {
+                        Say("I probably won't get an answer from that.");
+                    }
                 }
                 else
                 {
-                    Say("I probably won't get an answer from that.");
+                    Say("I can't talk to the dead.");
                 }
             }
             else
             {
-                Say("Can't find that character here..");
+                Say("Can't find that character here.");
             }
         }
 
@@ -169,9 +190,6 @@ namespace ChaosOffice
                                 character.CurrentTarget = null;
                                 CurrentTarget = null;
                                 break;
-                            case -2:
-                                // goto fight mode
-                                break;
                             default:
                                 character.Say(CurrentDialogLayerIndex);
                                 break;
@@ -186,6 +204,111 @@ namespace ChaosOffice
             else
             {
                 Console.WriteLine("Please select a number.");
+            }
+        }
+
+        public void TakeItem(string itemName)
+        {
+            if (itemName == "")
+            {
+                Say("What am I looking for again?");
+            }
+            else if (CurrentRoom.Items.TryGet(itemName, out Item item))
+            {
+                if (item.Takeable)
+                {
+                    CurrentRoom.Items.Remove(item);
+                    Inventory.Add(item);
+                    item.Print("You took ", ".");
+                }
+                else
+                {
+                    Say("Ouuuhaarrrg. I cannot put that in my pockets, it's too heavy.");
+                }
+            }
+            else
+            {
+                Say("Damn, i can't find that anywhere.");
+            }
+        }
+
+        public void DropItem(string itemName)
+        {
+            if (itemName == "")
+            {
+                Say("What did i want to drop again?");
+            }
+            else if (Inventory.TryGet(itemName, out Item item))
+            {
+                Inventory.Remove(item);
+                CurrentRoom.Items.Add(item);
+                item.Print("You dropped ", ".");
+            }
+            else
+            {
+                Say("Damn, i can't find that in my pockets.");
+            }
+        }
+
+        public void ConsumeItem(string itemName)
+        {
+            if (itemName == "")
+            {
+                Say("What did I want to consume again?");
+            }
+            else if (Inventory.Contains(itemName))
+            {
+                ConsumeableItem item = Inventory.Get(itemName) as ConsumeableItem;
+                if (item != null)
+                {
+                    if (Health != MaxHealth)
+                    {
+                        item.Print("You consumed ", ".");
+                        RestoreHealth(item.HealthRegeneration);
+                        if (Game.Instance.GameState == GameStates.Fight)
+                        {
+                            Game.Instance.FinishFightingRound();
+                        }
+                    }
+                    else
+                    {
+                        Say("I'm feeling pretty good, I think consuming that now would be a waste.");
+                    }
+                }
+                else
+                {
+                    Say("I'd rather not consume that.");
+                }
+            }
+            else
+            {
+                Say("Damn, i can't find that in my pockets.");
+            }
+        }
+
+        public void BeatTarget(string weaponName)
+        {
+            if (weaponName == "")
+            {
+                BeatTarget();
+                Game.Instance.FinishFightingRound();
+            }
+            else if (Inventory.TryGet(weaponName, out Item item))
+            {
+                Weapon weapon = item as Weapon;
+                if (weapon != null)
+                {
+                    BeatTarget(weapon.DamageDice, weapon.DamageModifier, weapon.Accuracy);
+                    Game.Instance.FinishFightingRound();
+                }
+                else
+                {
+                    Say("I don't think it is a good idea to use that as a weapon.");
+                }
+            }
+            else
+            {
+                Say("Damn, I can't find that in my pockets..");
             }
         }
     }

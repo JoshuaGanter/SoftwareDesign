@@ -6,7 +6,10 @@ namespace ChaosOffice
     public class Character : Actor
     {
         public DialogLayer[] Dialog {get; private set;}
-        public Character(string name, string description, int maxHealth, int baseDefense, int baseAttack, DialogLayer[] dialog) : base(name, description, maxHealth, baseDefense, baseAttack)
+        public Character(string name, string description, int maxHealth = 20, int armorClass = 12, int weaponlessDamageDice = 4, int weaponlessDamageModifier = 0, int weaponlessAccuracyModifier = 2, bool isAgressive = false, ConsoleColor color = ConsoleColor.Cyan) : base(name, description, maxHealth, armorClass, weaponlessDamageDice, weaponlessDamageModifier, weaponlessAccuracyModifier, isAgressive, color)
+        {}
+
+        public Character(string name, string description, DialogLayer[] dialog, ConsoleColor color = ConsoleColor.Cyan) : base(name, description, 20, 12, 4, 0, 2, false, color)
         {
             Dialog = dialog;
         }
