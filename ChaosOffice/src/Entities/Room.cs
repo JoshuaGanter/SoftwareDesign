@@ -33,7 +33,7 @@ namespace ChaosOffice
 
         public bool TryGetAggressiveCreature(out Creature aggressor)
         {
-            int aggressiveCreatureIndex = Creatures.FindIndex(creature => creature.IsAgressive && creature.IsAlive);
+            int aggressiveCreatureIndex = Creatures.FindIndex(creature => creature.IsAggressive && creature.IsAlive);
             if (aggressiveCreatureIndex != -1)
             {
                 aggressor = Creatures[aggressiveCreatureIndex];

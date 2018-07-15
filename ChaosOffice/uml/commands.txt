@@ -1,22 +1,21 @@
 General:
-(h)elp ......................... List of commands you can use
-(q)uit ......................... Leave the game
-(e)xit ......................... Leave the game
+(h)elp ....................... List of commands you can use
+(e)xit ....................... Leave the game
 
 In adventure state:
-(g)o <direction> ............... Go in a specified direction, possible values: (n)orth, (e)ast, (s)outh, (w)est
-(l)ook [at] <entity,direction> . Look in a specified direction or at an entity
-(i)nventory .................... List the items in your inventory
-(t)ake <item> .................. Take an item
-(d)rop <item> .................. Drop an item
-(a)ttack <creature> ............ Attack a creature
-(s)peak [to] <character> ....... Speak to a character
-(c)onsume <item> ............... Consume an item
+(g)o <direction> ............. Go in a specified direction
+(l)ook [<entity,direction>] .. Look around or in a specified direction or at an entity
+(i)nventory .................. List the items in your inventory
+(t)ake <item> ................ Take an item
+(d)rop <item> ................ Drop an item
+(a)ttack <creature> .......... Attack a creature
+(s)peak <character> .......... Speak to a character
+(c)onsume <item> ............. Consume an item
 
 In fight state:
-(h)it [with] [<weapon>] ........ Hit the enemy [with an specified item]
-(w)ait ......................... Pass your current turn
-(c)onsume: <item> .............. Consume an item
+(b)eat [<weapon>] ............ Beat the enemy [with an specified weapon]
+(w)ait ....................... Pass your current turn
+(c)onsume: <item> ............ Consume an item
 
 In dialog state:
-(p)ick <dialog_option> ......... Select the dialog option
+(p)ick <dialog_option> ..... Select the dialog option

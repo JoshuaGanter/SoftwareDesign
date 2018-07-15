@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+//fontsize=14
+//fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1374</x>
+      <y>270</y>
+      <w>318</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Item
+
+-
+
+- _takeable : bool
+
+-
+
++ Item(name : string, description : string, takeable : bool, color : ConsoleColor)
+
++ GetTakeable() : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1422</x>
+      <y>0</y>
+      <w>252</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>/Entity/
+
+-
+
+- _name : string
+- _description : string
+
+# _color : ConsoleColor
+
+-
+
++ Entity(name : string, description : string, color : ConsoleColor)
+
++ GetName() : string
++ GetDescription() : string
++ Print(prefix : string, suffix : string) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>534</x>
+      <y>222</y>
+      <w>828</w>
+      <h>354</h>
+    </coordinates>
+    <panel_attributes>Creature
+
+-
+
+- _armorClass : int
+- _weaponlessDamageDice : int
+- _weaponlessDamageModifier : int
+- _weaponlessAccuracyModifier : int
+- _isAggressive : bool
+
+# _health : int
+# _maxHealth : int
+# _currentRoom : Room
+
++ CurrentTarget : Creature
+
+-
+
++ Creature(name : string, description : string, maxHealth : int, armorClass : int, weaponlessDamageDice : int, weaponlessDamageModifier : int, weaponlessAccuracyModifier : int, isAggressive : bool, color : ConsoleColor)
+
++ GetArmorClass() : int
++ GetWeaponlessDamageDice() : int
++ GetWeaponlessDamageModifier() : int
++ GetWeaponlessAccuracyModifier() : int
++ GetIsAggressive() : bool
++ GetCurrentRoom() : Room
+
++ IsAlive() : bool
++ Say(phrase : string) : void
++ DrainHealth(amount : int) : bool
++ RestoreHealth(amount : int) : void
++ BeatTarget() : void
++ BeatTarget(damageDice : int, damageModifier : int, accuracyModifier : int) : void
++ Print(prefix : string, suffix : string, muteDead : bool) : void
++ EnterRoom(room : Room) : void
+
+- MakeAbilityCheck(modifier : int, difficultyClass : int) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>282</x>
+      <y>792</y>
+      <w>180</w>
+      <h>258</h>
+    </coordinates>
+    <panel_attributes>Player
+
+-
+
+_- _instance : Player_
+
++ CurrentDialogLayerIndex : int
+
+-
+
+_+ GetInstance() : Player_
+
+- Player()
+
+-
+
++ GoTo(direction : string) : void
++ Attack(targetName : string) : void
++ EngageFight(creature : Creature) : void
++ LookAt(targetName : string) : void
++ PrintInventory() : void
++ SpeakTo(characterName : string) : void
++ PickDialogLine(line : string) : void
++ TakeItem(itemName : string) : void
++ DropItem(itemName : string) : void
++ ConsumeItem(itemName : string) : void
++ BeatTarget(weaponName : string) : void
++ EnterRoom(room : room) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>522</x>
+      <y>810</y>
+      <w>840</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Character
+
+-
+
+- _dialog : Dialog[0..*]
+
+-
+
++ Character(name : string, description : string, maxHealth : int, armorClass : int, weaponlessDamageDice : int, weaponlessDamageModifier : int, weaponlessAccuracyModifier : int, isAggressive : bool, color : ConsoleColor)
++ Character(name : string, description : string, dialog : DialogLayer[0..*], color : ConsoleColor)
+
++ GetDialog() : Dialog[0..*]
++ Say(dialogLayerIndex : int) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>492</x>
+      <y>600</y>
+      <w>834</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>/Actor/
+
+-
+
+- _inventory : EntityList&lt;Item&gt;
+
+-
+
++ Actor(name : string, description : string, maxHealth : int, armorClass : int, weaponlessDamageDice : int, weaponlessDamageModifier : int, weaponlessAccuracyModifier : int, isAggressive : bool, color : ConsoleColor)
+
++ GetInventory() : EntityList&lt;Item&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1734</x>
+      <y>270</y>
+      <w>270</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>Room
+
+-
+
+- _creatures : EntityList&lt;Creature&gt;
+- _items : EntityList&lt;Item&gt;
+- _connections : Dictionary&lt;string, Door&gt;
+
+-
+
++ Room(name : string, description : string)
+
++ GetCreatures() : EntityList&lt;Creature&gt;
++ GetItems() : EntityList&lt;Item&gt;
++ GetAllEntities() : EntityList&lt;Entity&gt;
++ PrintRoomIntroduction() : void
++ TryGetAggressiveCreature(out aggressor : Creature) : bool
++ ExamineRoom() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1224</x>
+      <y>570</y>
+      <w>18</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>702</y>
+      <w>858</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1410.0;10.0;1410.0;50.0;10.0;50.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1242</x>
+      <y>702</y>
+      <w>48</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;60.0;120.0;60.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>906</x>
+      <y>150</y>
+      <w>582</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>950.0;10.0;950.0;90.0;10.0;90.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1524</x>
+      <y>150</y>
+      <w>18</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1566</x>
+      <y>150</y>
+      <w>192</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0;300.0;160.0;300.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1524</x>
+      <y>822</y>
+      <w>204</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>DialogLayer
+
+-
+
++ Opening : string
++ DialogOptions : DialogOption[0..*]
+
+-
+
++ GetAvailableDialogOptions() : List&lt;DialogOption&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2178</x>
+      <y>270</y>
+      <w>372</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Door
+
+-
+
+- _key : Key
+- _nextRoom : Room
+- _lockedMessage : string
+
+-
+
++ Door(name : string, description : string, nextRoom : Room, key : Key, lockedMessage : string)
+
++ GetKey() : Key
++ GetNextRoom() : Room
++ GetLockedMessage() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1374</x>
+      <y>432</y>
+      <w>204</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>Key
+
+-
+
+
+-
+
++ Key(name : string, description : string, value : int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1470</x>
+      <y>372</y>
+      <w>18</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1428</x>
+      <y>612</y>
+      <w>492</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>Weapon
+
+-
+
+- _damageDice : int
+- _damageModifier : int
+- _accuracyModifier : int
+
+-
+
++ Weapon(name : string, description : string, damageDice : int, damageModifier : int, accuracyModifier : int, color : ConsoleColor)
+
++ GetDamageDice() : int
++ GetDamageModifier() : int
++ GetAccuracyModifier() : int
++ Print(prefix : string, suffix : string) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1674</x>
+      <y>372</y>
+      <w>150</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0;230.0;160.0;230.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1722</x>
+      <y>486</y>
+      <w>426</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>ConsumeableItem
+
+-
+
+- _healthRegeneration : int
+
+-
+
++ ConsumeableItem(name : string, description : string, value : int, healthRegeneration : int, color : ConsoleColor)
+
++ GetHealthRegeneration() : int
++ Print(prefix : string, suffix : string) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>372</y>
+      <w>48</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;240.0;10.0;240.0;10.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1596</x>
+      <y>150</y>
+      <w>684</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0;1120.0;130.0;1120.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1998</x>
+      <y>312</y>
+      <w>192</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2190</x>
+      <y>708</y>
+      <w>198</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>EntityList&lt;T : Entity&gt; : List&lt;T&gt;
+
+-
+
+
+-
+
++ Contains(entityName : string) : bool
++ Get(entityName : string) : T
++ Remove(entityName : string) : bool
++ TryGet(entityName : string, out entity : T) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>642</y>
+      <w>882</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;250.0;1450.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1998</x>
+      <y>330</y>
+      <w>204</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;10.0;270.0;660.0;320.0;660.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1356</x>
+      <y>846</y>
+      <w>180</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>414</x>
+      <y>744</y>
+      <w>102</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>80.0;150.0;150.0;150.0;150.0;10.0;10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1830</x>
+      <y>822</y>
+      <w>450</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>DialogOption
+
+-
+
++ NextLayer : int
++ Sentence : string
++ IsSelectable : Func&lt;bool&gt;
++ ApplyResults : Action
+
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1722</x>
+      <y>846</y>
+      <w>120</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+</diagram>

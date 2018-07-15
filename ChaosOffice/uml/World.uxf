@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>220</y>
+      <x>280</x>
+      <y>140</y>
       <w>250</w>
       <h>320</h>
     </coordinates>
@@ -17,9 +17,9 @@ Characters
 
 -
 Items
-- your desk
-- your computer
-- flyswatter
+- Desk
+- Computer
+- Flyswatter
 
 -
 Exits
@@ -30,8 +30,8 @@ bg=#98FB98</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>220</y>
+      <x>600</x>
+      <y>140</y>
       <w>250</w>
       <h>320</h>
     </coordinates>
@@ -43,9 +43,9 @@ Characters
 
 -
 Items
-- fire extinguisher
-- jackets
-- broom
+- Umbrella
+- Jacket
+- Broom
 
 -
 Exits
@@ -59,8 +59,8 @@ Exits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>940</x>
-      <y>220</y>
+      <x>920</x>
+      <y>140</y>
       <w>250</w>
       <h>320</h>
     </coordinates>
@@ -74,15 +74,15 @@ Characters
 
 -
 Items
-- building plan
-- cup of coffee</panel_attributes>
+- Building Plan
+- Coffee</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>1040</y>
+      <x>600</x>
+      <y>960</y>
       <w>250</w>
       <h>300</h>
     </coordinates>
@@ -106,8 +106,8 @@ Exits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>640</y>
+      <x>600</x>
+      <y>560</y>
       <w>250</w>
       <h>300</h>
     </coordinates>
@@ -115,12 +115,12 @@ Exits
 
 -
 Characters
-- Phil Spencer (your boss)
+- Phil Spencer
 
 -
 Items
-- computer magazine
-- water bottle
+- Magazine
+- Water
 
 -
 Exits
@@ -132,8 +132,8 @@ Exits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>640</y>
+      <x>280</x>
+      <y>560</y>
       <w>250</w>
       <h>300</h>
     </coordinates>
@@ -146,6 +146,7 @@ Characters
 
 -
 Items
+- Knife
 
 -
 Exits
@@ -156,8 +157,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>330</y>
+      <x>520</x>
+      <y>250</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -167,8 +168,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>860</x>
-      <y>330</y>
+      <x>840</x>
+      <y>250</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -178,8 +179,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>530</y>
+      <x>690</x>
+      <y>450</y>
       <w>30</w>
       <h>130</h>
     </coordinates>
@@ -189,8 +190,8 @@ Exits
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>1040</y>
+      <x>280</x>
+      <y>960</y>
       <w>250</w>
       <h>300</h>
     </coordinates>
@@ -212,8 +213,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>370</y>
+      <x>520</x>
+      <y>290</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -223,8 +224,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>860</x>
-      <y>370</y>
+      <x>840</x>
+      <y>290</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -234,8 +235,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>530</y>
+      <x>740</x>
+      <y>450</y>
       <w>30</w>
       <h>130</h>
     </coordinates>
@@ -245,8 +246,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>930</y>
+      <x>690</x>
+      <y>850</y>
       <w>30</w>
       <h>130</h>
     </coordinates>
@@ -256,8 +257,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>930</y>
+      <x>740</x>
+      <y>850</y>
       <w>30</w>
       <h>130</h>
     </coordinates>
@@ -267,8 +268,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
-      <y>930</y>
+      <x>370</x>
+      <y>850</y>
       <w>30</w>
       <h>130</h>
     </coordinates>
@@ -278,8 +279,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>930</y>
+      <x>420</x>
+      <y>850</y>
       <w>30</w>
       <h>130</h>
     </coordinates>
@@ -289,8 +290,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>750</y>
+      <x>520</x>
+      <y>670</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -300,8 +301,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>790</y>
+      <x>520</x>
+      <y>710</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -311,8 +312,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>1170</y>
+      <x>520</x>
+      <y>1090</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -322,8 +323,8 @@ Exits
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>1210</y>
+      <x>520</x>
+      <y>1130</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -333,21 +334,20 @@ Exits
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>60</x>
-      <y>270</y>
+      <x>40</x>
+      <y>190</y>
       <w>230</w>
-      <h>220</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>It is late afternoon and you are
 tirelessly working on a game for
 weeks now.
-A very critical bug is still in the
-game and you can't find a
-way to fix it.
+A critical bug is still in the game
+and you can't find a way to fix it.
 Just now your colleague sent you
 an email that he fixed the bug.
-You have to get to his office
-and receive the
+You have to get to his office and
+receive the
 *Mighty Saviour (USB flash drive)*
 with the code fixing the issue..</panel_attributes>
     <additional_attributes/>
@@ -355,8 +355,8 @@ with the code fixing the issue..</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1200</x>
-      <y>280</y>
+      <x>1180</x>
+      <y>200</y>
       <w>230</w>
       <h>80</h>
     </coordinates>
@@ -369,8 +369,8 @@ incarnation of Skyrim.</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>630</x>
-      <y>80</y>
+      <x>610</x>
+      <y>0</y>
       <w>230</w>
       <h>130</h>
     </coordinates>
@@ -378,16 +378,16 @@ incarnation of Skyrim.</panel_attributes>
 wiping the floor. As you walk
 over it, you mess up the drying
 surface.
-He is truely upset about it, if you
-talk to him he's complaining that
-nobody appreciates his work.</panel_attributes>
+He is noticeably upset about it, if
+you talk to him he's complaining
+that nobody appreciates his work.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>880</x>
-      <y>690</y>
+      <x>860</x>
+      <y>610</y>
       <w>230</w>
       <h>210</h>
     </coordinates>
@@ -408,10 +408,10 @@ rethink his decision.</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>60</x>
-      <y>1090</y>
+      <x>40</x>
+      <y>1010</y>
       <w>230</w>
-      <h>200</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>Without a plan you may not
 enter the ventilation shaft. Rumors
@@ -429,8 +429,8 @@ talkative rat.</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>60</x>
-      <y>700</y>
+      <x>40</x>
+      <y>620</y>
       <w>230</w>
       <h>80</h>
     </coordinates>
@@ -443,8 +443,8 @@ you a coffee.. Or a tea.</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>880</x>
-      <y>1040</y>
+      <x>860</x>
+      <y>960</y>
       <w>230</w>
       <h>290</h>
     </coordinates>

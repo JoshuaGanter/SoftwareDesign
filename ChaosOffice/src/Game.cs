@@ -145,7 +145,7 @@ namespace ChaosOffice
                         break;
                 }
 
-                if (Player.Instance.Health <= 0)
+                if (!Player.Instance.IsAlive)
                 {
                     WriteLine("On your journey to find the fix for your code, you were defeated. Your blood now sprinkles the walls in the office. After a short time you are forgotten and replaced.");
                     WriteLine("GAME OVER", ConsoleColor.Red);
@@ -166,7 +166,7 @@ namespace ChaosOffice
         public void FinishFightingRound()
         {
             Creature enemy = Player.Instance.CurrentTarget;
-            if (enemy.Health > 0)
+            if (enemy.IsAlive)
             {
                 enemy.BeatTarget();
             }

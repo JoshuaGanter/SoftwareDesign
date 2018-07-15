@@ -63,9 +63,13 @@ namespace ChaosOffice
 
         public void Attack(string targetName)
         {
-            if (CurrentRoom.Creatures.TryGet(targetName, out Creature creature))
+            if (targetName == "")
             {
-                if (creature.Health > 0)
+                Say("What should I attack again?");
+            }
+            else if (CurrentRoom.Creatures.TryGet(targetName, out Creature creature))
+            {
+                if (creature.IsAlive)
                 {
                     EngageFight(creature);
                 }
@@ -76,7 +80,7 @@ namespace ChaosOffice
             }
             else
             {
-                Say("I can't attack that.");
+                Say("I can't find that.");
             }
         }
 
@@ -174,36 +178,32 @@ namespace ChaosOffice
             if (int.TryParse(line, out int lineIndex))
             {
                 Character character = CurrentTarget as Character;
-                if (character != null)
+                List<DialogOption> dialogOptions = character.Dialog[CurrentDialogLayerIndex].GetAvailableDialogOptions();
+                if (lineIndex > 0 && lineIndex <= dialogOptions.Count)
                 {
-                    List<DialogOption> dialogOptions = character.Dialog[CurrentDialogLayerIndex].GetAvailableDialogOptions();
-                    if (lineIndex > 0 && lineIndex <= dialogOptions.Count)
+                    DialogOption dialogOption = dialogOptions[lineIndex - 1];
+                    Say(dialogOption.Sentence);
+                    dialogOption.ApplyResults();
+                    CurrentDialogLayerIndex = dialogOption.NextLayer;
+                    if(CurrentDialogLayerIndex == -1)
                     {
-                        DialogOption dialogOption = dialogOptions[lineIndex - 1];
-                        Say(dialogOption.Sentence);
-                        dialogOption.ApplyResults();
-                        CurrentDialogLayerIndex = dialogOption.NextLayer;
-                        switch(CurrentDialogLayerIndex)
-                        {
-                            case -1:
-                                Game.Instance.GameState = GameStates.Adventure;
-                                character.CurrentTarget = null;
-                                CurrentTarget = null;
-                                break;
-                            default:
-                                character.Say(CurrentDialogLayerIndex);
-                                break;
-                        }
+                        Game.Instance.GameState = GameStates.Adventure;
+                        character.CurrentTarget = null;
+                        CurrentTarget = null;
                     }
                     else
                     {
-                        Console.WriteLine("Please select a number that is actually there.");
+                        character.Say(CurrentDialogLayerIndex);
                     }
+                }
+                else
+                {
+                    Game.WriteLine("Please select a number that is actually there.");
                 }
             }
             else
             {
-                Console.WriteLine("Please select a number.");
+                Game.WriteLine("Please select a number.");
             }
         }
 
@@ -263,8 +263,9 @@ namespace ChaosOffice
                 {
                     if (Health != MaxHealth)
                     {
-                        item.Print("You consumed ", ".");
                         RestoreHealth(item.HealthRegeneration);
+                        item.Print("You consumed ", ".");
+                        Inventory.Remove(item);
                         if (Game.Instance.GameState == GameStates.Fight)
                         {
                             Game.Instance.FinishFightingRound();

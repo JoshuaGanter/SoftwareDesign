@@ -4,13 +4,13 @@ namespace ChaosOffice
 {
     public class Creature : Entity
     {
-        public int Health {get; private set;}
-        public int MaxHealth {get; private set;}
+        protected int Health;
+        protected int MaxHealth;
         public int ArmorClass {get; private set;}
         public int WeaponlessDamageDice {get; private set;}
         public int WeaponlessDamageModifier {get; private set;}
         public int WeaponlessAccuracyModifier {get; private set;}
-        public bool IsAgressive {get; private set;}
+        public bool IsAggressive {get; private set;}
         public bool IsAlive
         {
             get
@@ -21,7 +21,7 @@ namespace ChaosOffice
         public Room CurrentRoom {get; protected set;}
         public Creature CurrentTarget;
 
-        public Creature(string name, string description, int maxHealth = 20, int armorClass = 12, int weaponlessDamageDice = 4, int weaponlessDamageModifier = 0, int weaponlessAccuracyModifier = 2, bool isAgressive = false, ConsoleColor color = ConsoleColor.Magenta) : base(name, description, color)
+        public Creature(string name, string description, int maxHealth = 20, int armorClass = 12, int weaponlessDamageDice = 4, int weaponlessDamageModifier = 0, int weaponlessAccuracyModifier = 2, bool isAggressive = false, ConsoleColor color = ConsoleColor.Magenta) : base(name, description, color)
         {
             Health= maxHealth;
             MaxHealth = maxHealth;
@@ -29,7 +29,7 @@ namespace ChaosOffice
             WeaponlessDamageDice = weaponlessDamageDice;
             WeaponlessDamageModifier = weaponlessDamageModifier;
             WeaponlessAccuracyModifier = weaponlessAccuracyModifier;
-            IsAgressive = isAgressive;
+            IsAggressive = isAggressive;
         }
 
         public void Say(string phrase)
@@ -57,11 +57,11 @@ namespace ChaosOffice
             Print("", " was healed for " + amount + " HP. (" + Health + "/" + MaxHealth + " HP remain).");
         }
 
-        public bool AbilityProbe(int modifier, int difficultyClass)
+        private bool MakeAbilityCheck(int modifier, int difficultyClass)
         {
-            int dice = Dice.Roll(20);
-            bool success = dice + modifier > difficultyClass;
-            Print("", " threw a " + dice + "+" + modifier + " (DC: " + difficultyClass + "), check " + (success ? "succeeded" : "failed."));
+            int diceResult = Dice.Roll(20);
+            bool success = diceResult + modifier > difficultyClass;
+            Print("", " threw a " + diceResult + "+" + modifier + " (DC: " + difficultyClass + "), check " + (success ? "succeeded." : "failed."));
             return success;
         }
 
@@ -78,7 +78,7 @@ namespace ChaosOffice
 
         public void BeatTarget(int damageDice, int damageModifier, int accuracyModifier)
         {
-            if (AbilityProbe(accuracyModifier, CurrentTarget.ArmorClass))
+            if (MakeAbilityCheck(accuracyModifier, CurrentTarget.ArmorClass))
             {
                 int damageDealt = Math.Max(0, Dice.Roll(damageDice) + damageModifier);
                 CurrentTarget.DrainHealth(damageDealt);
