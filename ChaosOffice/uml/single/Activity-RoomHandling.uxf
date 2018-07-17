@@ -9,7 +9,7 @@
       <w>582</w>
       <h>714</h>
     </coordinates>
-    <panel_attributes>Execute (for go command)
+    <panel_attributes>Execute "go" command
 valign=top
 halign=left</panel_attributes>
     <additional_attributes/>
@@ -696,7 +696,7 @@ m2=[aggressor found]</panel_attributes>
       <w>582</w>
       <h>564</h>
     </coordinates>
-    <panel_attributes>Execute (for look command)
+    <panel_attributes>Execute "look" command
 valign=top
 halign=left</panel_attributes>
     <additional_attributes/>
